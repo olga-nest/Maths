@@ -2,6 +2,8 @@
 
 @implementation AdditionQuestion
 
+//@synthesize question, answer;
+
 - (instancetype)init {
     if (self = [super init]) {
         
