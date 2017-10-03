@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
             
             if ([userInp isEqual: @"quit"]) {
                 gameOn = NO;
+                continue;
             } else {
             
             NSInteger usersAnswer = [userInp integerValue];
@@ -36,6 +37,7 @@ int main(int argc, const char * argv[]) {
             }
             
         }
+            
         }
     return 0;
     }
