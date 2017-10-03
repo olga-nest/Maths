@@ -5,9 +5,9 @@ int main(int argc, const char * argv[]) {
         char answerCString;
         
         
-        while (1 > 0) {
+        while (1) {
             
-            printf("Your answer:");
+            printf("Input your answer:");
             fgets(&answerCString, 255, stdin);
             
             NSString *result = [NSString stringWithCString:&answerCString
