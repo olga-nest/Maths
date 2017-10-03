@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "AdditionQuestion.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -15,8 +16,11 @@ int main(int argc, const char * argv[]) {
             
             //removes new line and white spaces
             NSCharacterSet *resultSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-            NSString *answer = [result stringByTrimmingCharactersInSet:(NSCharacterSet *)resultSet];
-            NSLog(@"Your answer is: %@", answer);
+            NSString *userInp = [result stringByTrimmingCharactersInSet:(NSCharacterSet *)resultSet];
+            NSLog(@"Your answer is: %@", userInp);
+            
+            
+            
             
         }
     }
