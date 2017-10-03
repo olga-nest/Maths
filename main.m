@@ -5,8 +5,9 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         char answerCString;
         
+        BOOL gameOn = YES;
         
-        while (1) {
+        while (gameOn == 1) {
             
             AdditionQuestion *questionObj = [[AdditionQuestion alloc]init];
             NSLog(@"%@", [questionObj question]);
@@ -17,9 +18,14 @@ int main(int argc, const char * argv[]) {
             NSString *result = [NSString stringWithCString:&answerCString
                                                   encoding:NSUTF8StringEncoding];
             
+            
             //removes new line and white spaces
             NSCharacterSet *resultSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
             NSString *userInp = [result stringByTrimmingCharactersInSet:(NSCharacterSet *)resultSet];
+            
+            if ([userInp isEqual: @"quit"]) {
+                gameOn = NO;
+            } else {
             
             NSInteger usersAnswer = [userInp integerValue];
             
@@ -29,8 +35,8 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"Wrong!");
             }
             
-            
         }
-    }
+        }
     return 0;
+    }
 }
