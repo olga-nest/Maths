@@ -4,6 +4,8 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        int right = 0;
+        int wrong = 0;
         
         BOOL gameOn = YES;
         
@@ -24,13 +26,15 @@ int main(int argc, const char * argv[]) {
             NSInteger usersAnswer = [userInp integerValue];
             
             if (usersAnswer == [questionObj answer]) {
+                right ++;
                 NSLog(@"Right!");
             } else {
+                wrong ++;
                 NSLog(@"Wrong!");
             }
             
         }
-            
+            NSLog(@"Your score is: %i rights and %i wrongs", right, wrong);
         }
     return 0;
     }
