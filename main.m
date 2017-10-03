@@ -8,6 +8,9 @@ int main(int argc, const char * argv[]) {
         
         while (1) {
             
+            AdditionQuestion *questionObj = [[AdditionQuestion alloc]init];
+            NSLog(@"%@", [questionObj question]);
+            
             printf("Input your answer:");
             fgets(&answerCString, 255, stdin);
             
@@ -17,9 +20,14 @@ int main(int argc, const char * argv[]) {
             //removes new line and white spaces
             NSCharacterSet *resultSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
             NSString *userInp = [result stringByTrimmingCharactersInSet:(NSCharacterSet *)resultSet];
-            NSLog(@"Your answer is: %@", userInp);
             
+            NSInteger usersAnswer = [userInp integerValue];
             
+            if (usersAnswer == [questionObj answer]) {
+                NSLog(@"Right!");
+            } else {
+                NSLog(@"Wrong!");
+            }
             
             
         }
