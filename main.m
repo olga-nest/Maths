@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "AdditionQuestion.h"
+#import "InputHandler.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        char answerCString;
         
         BOOL gameOn = YES;
         
@@ -12,16 +12,9 @@ int main(int argc, const char * argv[]) {
             AdditionQuestion *questionObj = [[AdditionQuestion alloc]init];
             NSLog(@"%@", [questionObj question]);
             
-            printf("Input your answer:");
-            fgets(&answerCString, 255, stdin);
             
-            NSString *result = [NSString stringWithCString:&answerCString
-                                                  encoding:NSUTF8StringEncoding];
-            
-            
-            //removes new line and white spaces
-            NSCharacterSet *resultSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-            NSString *userInp = [result stringByTrimmingCharactersInSet:(NSCharacterSet *)resultSet];
+            InputHandler *inputHandler = [InputHandler new];
+            NSString *userInp = [inputHandler getUsersAnswer];
             
             if ([userInp isEqual: @"quit"]) {
                 gameOn = NO;
