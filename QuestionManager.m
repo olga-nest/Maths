@@ -20,7 +20,9 @@
         totalTime = totalTime + [_questions[i] answerTime];
     }
     
-    NSString *outputString = [NSString stringWithFormat:@"%f", totalTime];
+    double avarageTime = totalTime/[_questions count];
+    
+    NSString *outputString = [NSString stringWithFormat:@"total time: %.2fs, avarage time: %.2fs", totalTime, avarageTime];
     
     return outputString;
     

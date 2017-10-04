@@ -4,7 +4,7 @@
 
 -(void)outputScore {
     
-    NSLog(@"Your score is: %i rights and %i wrongs ---%i ", _right, _wrong, ((_wrong * 100)/(_wrong + _right)));
+    NSLog(@"Your score is: %i rights and %i wrongs ---%i ", _right, _wrong, ((_right * 100)/(_wrong + _right)));
 
 }
 
