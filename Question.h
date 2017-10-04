@@ -1,9 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface AdditionQuestion : NSObject
-{
-    
-}
+@interface Question : NSObject
 
 @property NSString *question;
 @property NSInteger answer;

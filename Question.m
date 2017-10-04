@@ -1,6 +1,6 @@
 #import "AdditionQuestion.h"
 
-@implementation AdditionQuestion
+@implementation Question
 
 - (instancetype)init {
     if (self = [super init]) {
