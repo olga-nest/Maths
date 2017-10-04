@@ -19,6 +19,7 @@ int main(int argc, const char * argv[]) {
             NSString *userInp = [inputHandler getUsersAnswer];
             
             
+            
             if ([userInp isEqual: @"quit"]) {
                 gameOn = NO;
                 continue;
