@@ -5,13 +5,10 @@
 - (instancetype)init {
     if (self = [super init]) {
         
-        NSInteger firtsRandomNumber = arc4random_uniform(100) + 10;
-        NSInteger secondRandomNumber = arc4random_uniform(100) + 10;
+        _rightvalue = arc4random_uniform(100) + 10;
+        _leftvalue = arc4random_uniform(100) + 10;
         
         _startTime = [NSDate date];
-        
-        _question = [NSString stringWithFormat:@"%li + %li = ", (long)firtsRandomNumber, (long)secondRandomNumber];
-        _answer = firtsRandomNumber + secondRandomNumber;
         
     }
     return self;
@@ -26,5 +23,13 @@
     NSTimeInterval secondsBetween = [_endTime timeIntervalSinceDate:_startTime];
     return secondsBetween;
 }
+    
+-(void) setQuestionAndAnswer
+    {
+        
+    };
+    
+
+
 
 @end
