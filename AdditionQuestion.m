@@ -23,7 +23,7 @@
 }
 
 -(NSTimeInterval)answerTime {
-    NSTimeInterval secondsBetween = [_startTime timeIntervalSinceDate:_endTime];
+    NSTimeInterval secondsBetween = [_endTime timeIntervalSinceDate:_startTime];
     return secondsBetween;
 }
 
