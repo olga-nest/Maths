@@ -2,11 +2,19 @@
 
 @implementation ScoreKeeper
 
--(NSString *)outputScore {
+-(void)outputScore {
     
-    
-    //TODO: replace return with acctual string
-    return 0;
+    NSLog(@"Your score is: %i rights and %i wrongs", _right, _wrong);
+
 }
 
+-(int)countOfRight {
+    _right++;
+    return _right;
+}
+
+-(int)countOfWrong {
+    _wrong++;
+    return _wrong;
+}
 @end
