@@ -2,17 +2,20 @@
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc]init];
+        QuestionManager *questionManager = [[QuestionManager alloc]init];
         
         BOOL gameOn = YES;
         
         while (gameOn == 1) {
             
             AdditionQuestion *questionObj = [[AdditionQuestion alloc]init];
+            [questionManager.questions addObject:questionObj];
             NSLog(@"%@", [questionObj question]);
             
             InputHandler *inputHandler = [InputHandler new];
@@ -30,6 +33,7 @@ int main(int argc, const char * argv[]) {
             if (usersAnswer == [questionObj answer]) {
                 [scoreKeeper countOfRight];
                 NSLog(@"Right!");
+//                NSLog(@"Time Difference: %f", [questionObj answerTime]);
             } else {
                 [scoreKeeper countOfWrong];
                 NSLog(@"Wrong!");
@@ -38,6 +42,8 @@ int main(int argc, const char * argv[]) {
         }
             
             [scoreKeeper outputScore];
+//          Remove me:
+//          NSLog(@"%lu", (unsigned long)[questionManager.questions count]);
       
         }
     return 0;
