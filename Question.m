@@ -1,4 +1,4 @@
-#import "AdditionQuestion.h"
+#import "Question.h"
 
 @implementation Question
 
