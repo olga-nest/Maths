@@ -42,8 +42,9 @@ int main(int argc, const char * argv[]) {
         }
             
             [scoreKeeper outputScore];
-//          Remove me:
+//          Remove me: prints count of questionObj in the array
 //          NSLog(@"%lu", (unsigned long)[questionManager.questions count]);
+            NSLog(@"%@", [questionManager timeOutput]);
       
         }
     return 0;
