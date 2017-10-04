@@ -5,8 +5,8 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-  //     int right = 0;
-  //      int wrong = 0;
+        
+        ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc]init];
         
         BOOL gameOn = YES;
         
@@ -18,7 +18,6 @@ int main(int argc, const char * argv[]) {
             InputHandler *inputHandler = [InputHandler new];
             NSString *userInp = [inputHandler getUsersAnswer];
             
-           ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc]init];
             
             if ([userInp isEqual: @"quit"]) {
                 gameOn = NO;
@@ -28,11 +27,9 @@ int main(int argc, const char * argv[]) {
              NSInteger usersAnswer = [userInp integerValue];
             
             if (usersAnswer == [questionObj answer]) {
-             //  right ++;
-              [scoreKeeper countOfRight];
+                [scoreKeeper countOfRight];
                 NSLog(@"Right!");
             } else {
-            //    wrong ++;
                 [scoreKeeper countOfWrong];
                 NSLog(@"Wrong!");
             }
@@ -40,7 +37,7 @@ int main(int argc, const char * argv[]) {
         }
             
             [scoreKeeper outputScore];
-         //   NSLog(@"Your score is: %i rights and %i wrongs", right, wrong);
+      
         }
     return 0;
     }
