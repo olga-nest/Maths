@@ -3,18 +3,20 @@
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc]init];
         QuestionManager *questionManager = [[QuestionManager alloc]init];
+        QuestionFactory *questionFactory = [[QuestionFactory alloc]init];
         
         BOOL gameOn = YES;
         
         while (gameOn == 1) {
             
-            Question *questionObj = [[Question alloc]init];
+            Question *questionObj = [questionFactory generateRandomQuestion];
             [questionManager.questions addObject:questionObj];
             NSLog(@"%@", [questionObj question]);
             
